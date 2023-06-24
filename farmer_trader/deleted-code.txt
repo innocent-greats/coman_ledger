@@ -1,0 +1,36 @@
+  drawer(Size size) {
+    return Row(
+      children: [
+        Drawer(
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.horizontal(
+              right: Radius.circular(20.0),
+            ),
+          ),
+          width: size.width * 0.75,
+          backgroundColor: whiteColor,
+          child: Column(
+            children: [
+              userInformation(size),
+              drawerItems(),
+            ],
+          ),
+        ),
+        closeButton(size),
+      ],
+    );
+  }
+  final TextEditingController tradingStatusController = TextEditingController();
+  final TextEditingController orderTradingStepController =
+      TextEditingController();
+  final TextEditingController orderTrackerHashController =
+      TextEditingController();
+  final TextEditingController ownerOrgController = TextEditingController();
+
+    final TextEditingController ownershipDeedUrlController =
+      TextEditingController();
+  final TextEditingController medicalCertificateUrlController =
+      TextEditingController();
+  final TextEditingController trackerIdController = TextEditingController();
+  final TextEditingController marketPriceController = TextEditingController();
+  final TextEditingController accountIdController = TextEditingController();
