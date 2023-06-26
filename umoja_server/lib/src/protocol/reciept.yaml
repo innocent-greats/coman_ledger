@@ -1,0 +1,25 @@
+# Yaml-files in the `protocol` directory specify which serializable objects
+# should be generated. When you add or modify a file, you will need to run
+# `serverpod generate` to make the generated classes available in the server and
+# client.
+#
+# Please consult the documentation for more information on what you can add to
+# your yaml-files.
+
+
+# Name of the class to generate.
+class: WarehouseReciept
+table: warehouse_reciept 
+fields:
+    createdDate: DateTime  
+    certificateTag :  String?
+    orderTrackerHash :  String?
+    orderId :  int, parent=service_order
+    commodityId :  int, parent=commodity
+    commodityName: String? 
+    commodityCategory: String? 
+    orderStatus : String?
+    tradingStatus: String?
+    holderAccountId :  int, parent=person
+    issuerAccountId : int, parent=service_provider
+    holderOrg: String?

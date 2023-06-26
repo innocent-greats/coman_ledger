@@ -15,19 +15,19 @@ class Commodity extends _i1.TableRow {
     required this.accountId,
     required this.category,
     required this.name,
-    required this.species,
-    required this.marketPrice,
+    this.species,
+    this.marketPrice,
     required this.weight,
-    required this.trackerId,
-    required this.location,
-    required this.imageUrl,
-    required this.ownershipDeedUrl,
-    required this.medicalCertificateUrl,
+    this.trackerId,
+    this.location,
+    this.imageUrl,
+    this.ownershipDeedUrl,
+    this.medicalCertificateUrl,
     required this.publicDescription,
-    required this.tradingStatus,
-    required this.orderTradingStep,
-    required this.orderTrackerHash,
-    required this.ownerOrg,
+    this.tradingStatus,
+    this.orderTradingStep,
+    this.orderTrackerHash,
+    this.ownerOrg,
   }) : super(id);
 
   factory Commodity.fromJson(
@@ -44,31 +44,31 @@ class Commodity extends _i1.TableRow {
           .deserialize<String>(jsonSerialization['category']),
       name: serializationManager.deserialize<String>(jsonSerialization['name']),
       species: serializationManager
-          .deserialize<String>(jsonSerialization['species']),
+          .deserialize<String?>(jsonSerialization['species']),
       marketPrice: serializationManager
-          .deserialize<double>(jsonSerialization['marketPrice']),
+          .deserialize<double?>(jsonSerialization['marketPrice']),
       weight:
           serializationManager.deserialize<double>(jsonSerialization['weight']),
       trackerId: serializationManager
-          .deserialize<String>(jsonSerialization['trackerId']),
+          .deserialize<String?>(jsonSerialization['trackerId']),
       location: serializationManager
-          .deserialize<String>(jsonSerialization['location']),
+          .deserialize<String?>(jsonSerialization['location']),
       imageUrl: serializationManager
-          .deserialize<String>(jsonSerialization['imageUrl']),
+          .deserialize<String?>(jsonSerialization['imageUrl']),
       ownershipDeedUrl: serializationManager
-          .deserialize<String>(jsonSerialization['ownershipDeedUrl']),
+          .deserialize<String?>(jsonSerialization['ownershipDeedUrl']),
       medicalCertificateUrl: serializationManager
-          .deserialize<String>(jsonSerialization['medicalCertificateUrl']),
+          .deserialize<String?>(jsonSerialization['medicalCertificateUrl']),
       publicDescription: serializationManager
           .deserialize<String>(jsonSerialization['publicDescription']),
       tradingStatus: serializationManager
-          .deserialize<String>(jsonSerialization['tradingStatus']),
+          .deserialize<String?>(jsonSerialization['tradingStatus']),
       orderTradingStep: serializationManager
-          .deserialize<int>(jsonSerialization['orderTradingStep']),
+          .deserialize<int?>(jsonSerialization['orderTradingStep']),
       orderTrackerHash: serializationManager
-          .deserialize<String>(jsonSerialization['orderTrackerHash']),
+          .deserialize<String?>(jsonSerialization['orderTrackerHash']),
       ownerOrg: serializationManager
-          .deserialize<String>(jsonSerialization['ownerOrg']),
+          .deserialize<String?>(jsonSerialization['ownerOrg']),
     );
   }
 
@@ -82,31 +82,31 @@ class Commodity extends _i1.TableRow {
 
   String name;
 
-  String species;
+  String? species;
 
-  double marketPrice;
+  double? marketPrice;
 
   double weight;
 
-  String trackerId;
+  String? trackerId;
 
-  String location;
+  String? location;
 
-  String imageUrl;
+  String? imageUrl;
 
-  String ownershipDeedUrl;
+  String? ownershipDeedUrl;
 
-  String medicalCertificateUrl;
+  String? medicalCertificateUrl;
 
   String publicDescription;
 
-  String tradingStatus;
+  String? tradingStatus;
 
-  int orderTradingStep;
+  int? orderTradingStep;
 
-  String orderTrackerHash;
+  String? orderTrackerHash;
 
-  String ownerOrg;
+  String? ownerOrg;
 
   @override
   String get tableName => 'commodity';

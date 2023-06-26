@@ -16,6 +16,7 @@ goto :LOOP
 :PORT_FOUND
 echo Postgres is ready
 type .\generated\tables-serverpod.pgsql | docker compose run -T postgres env PGPASSWORD="jE51GINWGPr2l-D4O4HLLGvakVv668V_" psql -h postgres -U postgres -d umoja
+type .\generated\tables.pgsql | docker compose run -T postgres env PGPASSWORD="jE51GINWGPr2l-D4O4HLLGvakVv668V_" psql -h postgres -U postgres -d umoja
 echo Stopping docker
 docker compose stop
 

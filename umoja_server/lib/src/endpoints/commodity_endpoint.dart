@@ -25,8 +25,13 @@ class CommodityEndpoint extends Endpoint {
   }
 
   Future<bool> updateCommodity(Session session, Commodity commodity) async {
-    var result = await Commodity.update(session, commodity);
-    return result;
+    try {
+      session.log('updateCommodity called');
+      await Commodity.update(session, commodity);
+    } catch (e) {
+      session.log(e.toString());
+    } finally {}
+    return true;
   }
 
   Future<bool> deleteCommodity(Session session, int id) async {
